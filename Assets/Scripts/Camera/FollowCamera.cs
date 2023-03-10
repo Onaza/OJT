@@ -3,38 +3,53 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    [SerializeField] private Transform target = null;
-
     [SerializeField] private float distance = 10.0f;
     [SerializeField] private float height = 5.0f;
     [SerializeField] private float smoothRate = 5.0f;
 
-    private void Awake()
+    private Transform target = null;
+    private Coroutine followCorutine = null;
+
+    private bool isPause = false;
+
+    public void StartFollow(Transform target)
     {
         Debug.Assert(target, "Target is Null !!");
-    }
 
-    private void Start()
+        this.target = target;
+        followCorutine = StartCoroutine(FollowLoop());
+    }
+    
+    public void StopFollow()
     {
-        StartCoroutine(Follow());
+        StopCoroutine(followCorutine);
     }
 
-    private IEnumerator Follow()
+    public void PauseFollow()
+    {
+        isPause = true;
+    }
+
+    public void ResumeFollow()
+    {
+        isPause = false;
+    }
+
+    private IEnumerator FollowLoop()
     {
         WaitForFixedUpdate waitForFixedUpdate = new WaitForFixedUpdate();
 
-        float angle = 0f;
-        Quaternion rotation = Quaternion.identity;
-
         while(true)
         {
-            angle = Mathf.LerpAngle(transform.eulerAngles.y, target.eulerAngles.y, smoothRate * Time.deltaTime);
-            // rotation = Quaternion.Euler(0f, angle, 0f);
+            if(isPause)
+                yield return null;
+            else
+            {
+                transform.position = target.position - (Vector3.forward * distance) + (Vector3.up * height);
+                transform.LookAt(target);
 
-            transform.position = target.position - (rotation * Vector3.forward * distance) + (Vector3.up * height);
-            transform.LookAt(target);
-
-            yield return waitForFixedUpdate;
+                yield return waitForFixedUpdate;
+            }
         }
     } 
 }

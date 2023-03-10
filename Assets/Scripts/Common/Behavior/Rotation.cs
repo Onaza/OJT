@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class Turret : MonoBehaviour
+public class Rotation : MonoBehaviour
 {
-    [SerializeField] private Transform turret = null;
+    [SerializeField] private Transform rotationObject = null;
 
     public void OnRotation(InputAction.CallbackContext context )
     {
@@ -14,7 +14,6 @@ public class Turret : MonoBehaviour
             return;
         
         Vector3 direction  = new Vector3(input.x, 0f, input.y).normalized;
-
-        turret.rotation = Quaternion.LookRotation(direction);
+        rotationObject.rotation = Quaternion.LookRotation(direction);
     }
 }

@@ -19,10 +19,11 @@ public class TargetBillboard : MonoBehaviour
     private IEnumerator Billboard()
     {
         WaitForFixedUpdate waitForFixedUpdate = new WaitForFixedUpdate();
-
+        Vector3 tartgetPosition = Vector3.zero;
         while(true)
         {
-            transform.LookAt(tartget);
+            tartgetPosition = new Vector3(tartget.position.x, transform.position.y, tartget.position.z);
+            transform.LookAt(tartgetPosition);
             yield return waitForFixedUpdate;
         }
     }

@@ -18,7 +18,10 @@ public class SceneRoot : MonoBehaviour
             followCamera = Camera.main.GetComponent<FollowCamera>();
 
         Debug.Assert(followCamera, "FollowCamera is Null !!");
+    }
 
-        
+    private void Start()
+    {
+        followCamera.StartFollow(playerManager.transform);
     }
 }

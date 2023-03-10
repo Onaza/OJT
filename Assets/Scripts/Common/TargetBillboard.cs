@@ -22,7 +22,6 @@ public class TargetBillboard : MonoBehaviour
 
         while(true)
         {
-            // transform.LookAt(transform.position + tartget.rotation * Vector3.forward, tartget.rotation * Vector3.up);
             transform.LookAt(tartget);
             yield return waitForFixedUpdate;
         }

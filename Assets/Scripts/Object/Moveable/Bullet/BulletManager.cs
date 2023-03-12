@@ -10,7 +10,6 @@ public class BulletManager : MonoBehaviour
 
     private ObjectPool bulletPool = null;
 
-
     private void Awake()
     {
         bulletPool = new ObjectPool(bulletPrefab);
@@ -23,6 +22,10 @@ public class BulletManager : MonoBehaviour
 
     public void Fire()
     {
+        // ObjectPool 적용 이전 코드
+        // Bullet bullet = Instantinate<Bullet>(bulletPrefab);
+        // bullet.Fire(bound); 
+
         Bullet bullet = bulletPool.Get<Bullet>();
         if(!bullet)
             return;

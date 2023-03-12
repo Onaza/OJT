@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : RecycleObject
 {
+    public Action<Bullet> Destroyed = null;
     private Vector2 bound = Vector2.zero;
 
     public void Fire(Vector2 bound)
@@ -23,7 +24,7 @@ public class Bullet : MonoBehaviour
             yield return waitForFixedUpdate;
         }
 
-        gameObject.SetActive(false);
+        Destroyed?.Invoke(this);
     }
 
     private bool OutBound()

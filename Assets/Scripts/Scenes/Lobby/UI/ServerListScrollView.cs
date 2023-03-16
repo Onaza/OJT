@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ServerListScrollView : MonoBehaviour
 {
-    
+    [SerializeField] private ServerListItem item = null;
 }

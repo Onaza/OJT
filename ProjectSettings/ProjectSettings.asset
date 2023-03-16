@@ -895,11 +895,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 2
-  cloudProjectId: 9438cdef-873d-4970-ab58-e0c19c038000
+  cloudProjectId: aa3a5f4f-4a1d-44d0-b6aa-01d7d49f146e
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: OJT_Example (1)
-  organizationId: parkwan-sik
+  projectName: OJT_Example
+  organizationId: onaza2588
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

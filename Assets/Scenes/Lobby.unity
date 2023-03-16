@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 84643348}
   - component: {fileID: 84643347}
   - component: {fileID: 84643346}
+  - component: {fileID: 84643350}
   m_Layer: 5
   m_Name: UIRoot
   m_TagString: Untagged
@@ -224,6 +225,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &84643350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84643345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751c6d7c07968944cbd6d790b00d9c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serverListScrollView: {fileID: 0}
 --- !u!1 &263801636
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +334,7 @@ GameObject:
   - component: {fileID: 318389865}
   - component: {fileID: 318389864}
   - component: {fileID: 318389863}
+  - component: {fileID: 318389866}
   m_Layer: 5
   m_Name: Server List Scroll View
   m_TagString: Untagged
@@ -418,6 +433,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318389861}
   m_CullTransparentMesh: 1
+--- !u!114 &318389866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318389861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e88bcf841411f145b6d14fed19276be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 1967294026}
 --- !u!1 &420461449
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +713,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323239126}
   m_CullTransparentMesh: 1
+--- !u!1 &1468611322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1468611323}
+  - component: {fileID: 1468611324}
+  m_Layer: 0
+  m_Name: LobbySceneRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1468611323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468611322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.50000024, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1468611324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468611322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d581a3746c4f24b8ec0f55a6ad3473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1638420337
 GameObject:
   m_ObjectHideFlags: 0

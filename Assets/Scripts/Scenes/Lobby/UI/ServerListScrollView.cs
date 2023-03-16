@@ -1,8 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class ServerListScrollView : MonoBehaviour
 {
     [SerializeField] private ServerListItem item = null;
+
+    private void Awake()
+    {
+        
+    }
 }

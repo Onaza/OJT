@@ -4,7 +4,12 @@ using UnityEngine;
 
 public struct PlayerData
 {
-    public string serverName;
-    public string id;
-    public string hp;
+    private string serverName;
+    private string id;
+    private string hp;
+
+    public void SetServerName(string serverName)
+    {
+        this.serverName = serverName;
+    }
 }

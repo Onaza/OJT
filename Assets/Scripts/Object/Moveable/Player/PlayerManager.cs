@@ -16,6 +16,12 @@ public class PlayerManager : MonoBehaviour
 
     private bool isInitiailzed = false;
 
+    public PlayerData Data
+    {
+        get { return data; }
+        set { data = value; }
+    }
+
     public void Initialize(Vector2 bound)
     {
         Debug.Assert(bulletManager, "BulletManager is Null !!");

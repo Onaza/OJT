@@ -10,7 +10,5 @@ public class LobbySceneRoot : MonoBehaviour
     private void Awake()
     {
         Debug.Assert(uiRoot, "UIRoot is Null !!");
-
-        Instantiate<PlayerManager>(playerPrefab);
     }
 }

@@ -11,12 +11,13 @@ public class ServerListItem : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener( ()=>
         {
-            PlayerManager.Instance.Data.SetServerName(serverName.text);
+            
         });
     }
 
-    public void SetServerName(string serverName)
+    public void Set(ServerListResponse.Data data)
     {
-        this.serverName.text = serverName;
+        this.serverName.text = data.serverId;
+        gameObject.SetActive(true);
     }
 }

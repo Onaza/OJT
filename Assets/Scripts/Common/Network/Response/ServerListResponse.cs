@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ServerListResponse : MonoBehaviour
+public class ServerListResponse
 {
     public List<Data> rows;
 

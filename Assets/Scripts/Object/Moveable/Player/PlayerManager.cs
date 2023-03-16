@@ -2,9 +2,17 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private BulletManager bulletManager = null;
+    private static PlayerManager instance = null;
 
+    public static PlayerManager Instance
+    {
+        get { return instance == null ? new PlayerManager() : instance; }
+    }
+
+    [SerializeField] private BulletManager bulletManager = null;
     [SerializeField] private Fire fireAction = null;
+
+    private PlayerData data;
 
     private bool isInitiailzed = false;
 
@@ -15,6 +23,8 @@ public class PlayerManager : MonoBehaviour
 
         if(isInitiailzed)
             return;
+
+        data = new PlayerData();
         
         bulletManager.Bound = bound;
 

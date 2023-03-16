@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class Request
 {
-    public static void GET(string url, Action<string> completeCallback)
+    public static void GET(string url, Action<string> completedCallback)
     {
         UnityWebRequestAsyncOperation operation = UnityWebRequest.Get(url).SendWebRequest();
 
@@ -13,7 +13,7 @@ public class Request
             if(operation.webRequest.result == UnityWebRequest.Result.ConnectionError)
                 Debug.LogError("[RequestGET] ConnectionError");
             else
-                completeCallback?.Invoke(operation.webRequest.downloadHandler.text);
+                completedCallback?.Invoke(operation.webRequest.downloadHandler.text);
 
             operation.webRequest.Dispose();
         };

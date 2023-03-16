@@ -11,7 +11,7 @@ public class ServerListScrollView : MonoBehaviour
         Request.GET(url, ServerListResponse);
     }
 
-    private void ServerListResponse(string json)
+    public void ServerListResponse(string json)
     {
         ServerListResponse response = JsonUtility.FromJson<ServerListResponse>(json);
 

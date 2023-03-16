@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LobbySceneRoot : MonoBehaviour
 {
-    [SerializeField] private PlayerManager playerPrefab = null;
     [SerializeField] private LobbySceneUIRoot uiRoot = null;
 
     private void Awake()

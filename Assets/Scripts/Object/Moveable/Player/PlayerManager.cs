@@ -6,7 +6,7 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager Instance
     {
-        get { return instance == null ? new PlayerManager() : instance; }
+        get { return instance; }
     }
 
     [SerializeField] private BulletManager bulletManager = null;
@@ -20,6 +20,11 @@ public class PlayerManager : MonoBehaviour
     {
         get { return data; }
         set { data = value; }
+    }
+
+    private void Awake()
+    {
+        instance = this;
     }
 
     public void Initialize(Vector2 bound)

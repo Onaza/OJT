@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainSceneRoot : MonoBehaviour
 {
@@ -9,10 +10,17 @@ public class MainSceneRoot : MonoBehaviour
 
     private FollowCamera followCamera = null;
 
-    private void Awake()
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         Debug.Assert(playerPrefab, "playerPrefab is Null !!");
         Debug.Assert(worldManager, "WorldManager is Null !!");
+
+        SceneManager.SetActiveScene(scene);
 
         if(!followCamera)
             followCamera = Camera.main.GetComponent<FollowCamera>();
@@ -20,10 +28,7 @@ public class MainSceneRoot : MonoBehaviour
         Instantiate<PlayerManager>(playerPrefab);
 
         Debug.Assert(followCamera, "FollowCamera is Null !!");
-    }
 
-    private void Start()
-    {
         followCamera.StartFollow(PlayerManager.Instance.transform);
 
         worldManager.Initialize();

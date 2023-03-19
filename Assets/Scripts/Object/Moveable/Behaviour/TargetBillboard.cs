@@ -6,13 +6,9 @@ public class TargetBillboard : MonoBehaviour
 {
     [SerializeField] private Transform tartget = null;
 
-    private void Awake()
-    {
-        Debug.Assert(tartget, "Target is Null !!");
-    }
-
     private void Start()
     {
+        Debug.Assert(tartget, "Target is Null !!");
         StartCoroutine(Billboard());
     }
 

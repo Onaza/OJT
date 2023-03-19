@@ -32,18 +32,18 @@ public class SceneLoader : MonoBehaviour
         return container[typeof(T)].GetComponent<T>();
     }
 
-    public void LoadAsyncScene(string sceneName, Action comoletedCallbak = null)
+    public void LoadAsyncScene(string sceneName, Action completedCallbak = null)
     {
         Scene currentScene = SceneManager.GetActiveScene();
-
+        Camera.main.gameObject.SetActive(false);
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        operation.allowSceneActivation = true;
 
         operation.completed += (oper)=>
         {
             SceneManager.MoveGameObjectToScene(this.gameObject, SceneManager.GetSceneByName(sceneName));
-
-             SceneManager.UnloadSceneAsync(currentScene);
-             comoletedCallbak?.Invoke();
+            SceneManager.UnloadSceneAsync(currentScene);
+            completedCallbak?.Invoke();
         };
 
     }

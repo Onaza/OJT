@@ -1,6 +1,6 @@
 
 public struct PlayerData
 {
-    private string id;
-    private string hp;
+    public string id;
+    public string hp;
 }

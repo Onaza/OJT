@@ -1,9 +1,11 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletManager : MonoBehaviour
 {
+    public Action<int> OnBulletCountChanged = null;
+    
     [SerializeField] private Bullet bulletPrefab = null;
 
     private Vector2 bound = Vector2.zero;
@@ -29,6 +31,8 @@ public class BulletManager : MonoBehaviour
         Bullet bullet = bulletPool.Get<Bullet>();
         if(!bullet)
             return;
+
+        OnBulletCountChanged?.Invoke(bulletPool.Count);
         bullet.Destroyed = bulletPool.Restore;
         bullet.transform.position = transform.position;
         bullet.transform.rotation = transform.rotation;

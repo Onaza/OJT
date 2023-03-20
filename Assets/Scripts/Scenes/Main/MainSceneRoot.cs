@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainSceneRoot : MonoBehaviour
 {
+    [SerializeField] private MainSceneUIRoot uiRoot = null;
     [SerializeField] private WorldManager worldManager = null;
     [SerializeField] private PlayerManager playerPrefab = null;
+
 
     private FollowCamera followCamera = null;
 
@@ -32,5 +34,7 @@ public class MainSceneRoot : MonoBehaviour
         followCamera.StartFollow(PlayerManager.Instance.transform);
 
         worldManager.Initialize();
+
+        uiRoot.Binding(PlayerManager.Instance);
     }
 }

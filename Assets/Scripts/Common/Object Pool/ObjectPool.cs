@@ -10,6 +10,8 @@ public class ObjectPool
     private Transform parent = null;
     private int defaultPoolSize = 10;
 
+    public int Count => pool.Count;
+
     public ObjectPool(RecycleObject recycleObject, int defaultPoolSize = 10, Transform parent = null)
     {
         this.recycleObject = recycleObject;

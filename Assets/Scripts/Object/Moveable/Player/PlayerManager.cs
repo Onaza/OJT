@@ -16,16 +16,12 @@ public class PlayerManager : MonoBehaviour
 
     private bool isInitiailzed = false;
 
-    public PlayerData Data
-    {
-        get { return data; }
-        set { data = value; }
-    }
-
     private void Awake()
     {
         instance = this;
     }
+
+    public BulletManager BulletManager => bulletManager;
 
     public void Initialize(Vector2 bound)
     {
